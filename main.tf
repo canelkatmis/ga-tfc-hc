@@ -17,6 +17,11 @@ provider "huaweicloud" {
   region     = "ap-southeast-3"
 }
 
+resource "huaweicloud_vpc" "example" {
+  name = "terraform_vpc"
+  cidr = "192.168.0.0/16"
+}
+
 # An example resource that does nothing.
 resource "null_resource" "example" {
     triggers = {
