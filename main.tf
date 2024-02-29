@@ -1,13 +1,20 @@
 terraform {
-    backend "remote" {
-    # The name of your Terraform Cloud organization.
+  backend "remote" {
     organization = "canelkatmis"
-
-    # The name of the Terraform Cloud workspace to store Terraform state files in.
     workspaces {
         name = "hc-test"
     }
+  }
+  required_providers {
+    huaweicloud = {
+      source = "huaweicloud/huaweicloud"
+      version = ">= 1.20.0"
     }
+  }
+}
+
+provider "huaweicloud" {
+  region     = "ap-southeast-3"
 }
 
 # An example resource that does nothing.
