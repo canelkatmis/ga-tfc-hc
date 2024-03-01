@@ -34,3 +34,8 @@ resource "huaweicloud_vpc" "myvpc" {
   name = "terraform_vpc"
   cidr = "192.168.0.0/16"
 }
+
+resource "huaweicloud_vpc" "myvpctwo" {
+  name = "terraform_vpc_two"
+  cidr = "192.168.0.0/16"
+}
