@@ -29,3 +29,8 @@ resource "null_resource" "exampletwo" {
     value = "A example resource that does nothing!"
     }
 }
+
+resource "huaweicloud_vpc" "myvpc" {
+  name = "terraform_vpc"
+  cidr = "192.168.0.0/16"
+}
