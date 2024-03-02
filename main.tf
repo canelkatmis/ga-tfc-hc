@@ -8,7 +8,7 @@ terraform {
   required_providers {
     huaweicloud = {
       source = "huaweicloud/huaweicloud"
-      version = ">= 1.20.0"
+      version = ">= 1.36.0"
     }
   }
 }
@@ -24,18 +24,7 @@ resource "null_resource" "example" {
     }
 }
 
-resource "null_resource" "exampletwo" {
-    triggers = {
-    value = "A example resource that does nothing!"
-    }
-}
-
 resource "huaweicloud_vpc" "myvpc" {
   name = "terraform_vpc"
-  cidr = "192.168.0.0/16"
-}
-
-resource "huaweicloud_vpc" "myvpctwo" {
-  name = "terraform_vpc_two"
   cidr = "192.168.0.0/16"
 }
